@@ -22,6 +22,7 @@ Please be kindly noticed that currently this version is in BETA and we may keep 
     - [depth](#depth)
     - [trades](#trades)
     - [klines](#klines)
+    - [allticker](#allticker)
 
 
 **End Point**
@@ -189,4 +190,72 @@ ktim params include:   kline_5m  kline_15m  kline_30m  kline_8h  kline_1d
 	    1532716536
           ]
         ]
+        ```
+### allticker
+
+* **URL**
+  /v2/allticker.php
+  https://oapi.bitexbay.com/v2/allticker.php?apikey=1ba2bfb58b99c7e93f91ba5219bd96ef41
+
+* **Description**
+  Get all market and price.
+
+* **Method:**
+  `GET`
+
+* **Parameters**
+
+
+* **Example Request:**
+    * **Request:**
+    `GET /v2/allticker.php?apikey=1ba2bfb58b99c7e93f91ba5219bd96ef41
+  
+    * **Success Response:**  
+        * **Code:** 200
+        * **Content:** 
+
+        ```
+{ 
+"date":"1410431279", 
+"ticker":[{ 
+"symbol":"ltc_usdt", 
+"buy":"33.15", 
+"high":"34.15", 
+"last":"33.15", 
+"low":"32.05", 
+"sell":"33.16", 
+"change":"4.5"
+"vol":"10532696.39199642" 
+},{ 
+"symbol":"btc_usdt", 
+"buy":"33.15", 
+"high":"34.15", 
+"last":"33.15", 
+"low":"32.05", 
+"sell":"33.16", 
+"change":"-4.5"
+"vol":"10532696.39199642" 
+}] 
+} 
+return params
+date: the server time 
+symbol: pairs 
+buy: buy price
+high: the highest price 
+last: the last price
+low: the low price
+sell: sell price 
+vol: the volue of 24 hours
+change: price change
+
+返回值说明
+date: 返回数据时服务器时间 
+symbol: 交易对（交易对1简称_交易对2简称） 
+buy: 买一价 
+high: 最高价 
+last: 最新成交价 
+low: 最低价 
+sell: 卖一价 
+vol: 成交量(最近的24小时)
+change:涨跌幅
         ```
